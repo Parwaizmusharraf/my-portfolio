@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PZ Musharraf | Portfolio</title>
+    <!-- FontAwesome Icons & Devicon Icons for Tech Logos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Interactive Dynamic Background -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <div class="container">
+        <!-- Header / Navbar -->
+        <header class="head">
+            <div class="logo">
+                <img src="https://static.vecteezy.com/system/resources/previews/010/761/004/non_2x/pz-logo-p-z-design-white-pz-letter-pz-letter-logo-design-initial-letter-pz-linked-circle-uppercase-monogram-logo-vector.jpg" alt="PZ Logo">
+                <h3>PZ.Musharraf</h3>
+            </div>
+            
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                </ul>
+            </nav>
+
+            <!-- Dark / Light Theme Switcher Button -->
+            <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()">
+                <i class="fa-solid fa-moon" id="themeIcon"></i>
+            </button>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="greeting">Hi, I'm</p>
+                <h1 class="name">PZ Musharraf</h1>
+                <h2 class="role">I am a <span id="element"></span></h2>
+                <p class="description">
+                    Diploma in Information Technology graduate from MANUU. 
+                    Specialized in <strong>MERN Stack</strong>, <strong>Data Analytics (Python, SQL)</strong>, and <strong>UI/UX Design</strong>.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary-btn">View Projects</a>
+                    <a href="#resume" class="btn secondary-btn"><i class="fa-solid fa-file-pdf"></i> Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="section-header">
+                <h2>Technical Skills</h2>
+                <button class="btn upload-btn" onclick="openSkillModal('add')">
+                    <i class="fa-solid fa-plus"></i> Add New Skill
+                </button>
+            </div>
+
+            <div class="skills-grid" id="skillsGrid">
+                <!-- Pre-populated Default Skills -->
+                <div class="skill-card" data-id="1">
+                    <i class="devicon-html5-plain colored skill-icon"></i>
+                    <h4>HTML5</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(1)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="2">
+                    <i class="devicon-css3-plain colored skill-icon"></i>
+                    <h4>CSS3</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(2)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="3">
+                    <i class="devicon-javascript-plain colored skill-icon"></i>
+                    <h4>JavaScript</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(3)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="4">
+                    <i class="devicon-mongodb-plain colored skill-icon"></i>
+                    <h4>MongoDB</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(4)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="5">
+                    <i class="devicon-mysql-plain colored skill-icon"></i>
+                    <h4>MySQL</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(5)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="6">
+                    <i class="devicon-express-original skill-icon"></i>
+                    <h4>Express.js</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(6)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="7">
+                    <i class="devicon-nodejs-plain colored skill-icon"></i>
+                    <h4>Node.js</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(7)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="8">
+                    <i class="devicon-react-original colored skill-icon"></i>
+                    <h4>React.js</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(8)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="9">
+                    <i class="devicon-python-plain colored skill-icon"></i>
+                    <h4>Python</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(9)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="10">
+                    <i class="devicon-numpy-original colored skill-icon"></i>
+                    <h4>NumPy</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(10)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="11">
+                    <i class="devicon-pandas-original colored skill-icon"></i>
+                    <h4>Pandas</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(11)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="12">
+                    <i class="fa-solid fa-file-excel skill-icon excel-icon"></i>
+                    <h4>Excel</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(12)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="13">
+                    <i class="fa-solid fa-chart-bar skill-icon powerbi-icon"></i>
+                    <h4>Power BI</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(13)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="14">
+                    <i class="fa-solid fa-chart-line skill-icon matplotlib-icon"></i>
+                    <h4>Matplotlib</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(14)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="15">
+                    <i class="fa-solid fa-chart-pie skill-icon tableau-icon"></i>
+                    <h4>Tableau</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(15)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="16">
+                    <i class="fa-solid fa-brain skill-icon ml-icon"></i>
+                    <h4>Machine Learning</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(16)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="17">
+                    <i class="fa-solid fa-wave-square skill-icon seaborn-icon"></i>
+                    <h4>Seaborn</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(17)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="skill-card" data-id="18">
+                    <i class="fa-brands fa-kaggle skill-icon kaggle-icon"></i>
+                    <h4>Kaggle</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(18)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <button class="btn upload-btn" onclick="openProjectModal('add')">
+                    <i class="fa-solid fa-plus"></i> Upload Project
+                </button>
+            </div>
+
+            <div class="card-grid" id="projectsGrid">
+                <div class="card" data-id="1">
+                    <div class="card-img-box">
+                        <img src="https://via.placeholder.com/400x220/1f2937/00fff0?text=MERN+E-Commerce" class="card-img" alt="Project">
+                    </div>
+                    <div class="card-details">
+                        <h3>E-Commerce Web Application</h3>
+                        <p class="card-tech"><strong>Tech:</strong> React, Node.js, Express, MongoDB</p>
+                        <p class="card-desc">Full-featured MERN stack online store with payment gateway integration.</p>
+                        <div class="project-links">
+                            <a href="https://example.com" target="_blank" class="link-btn live-link"><i class="fa-solid fa-globe"></i> Live Demo</a>
+                            <a href="https://github.com" target="_blank" class="link-btn github-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn edit-btn" onclick="editProject(1)"><i class="fa-solid fa-pen"></i> Edit</button>
+                            <button class="action-btn delete-btn" onclick="deleteProject(1)"><i class="fa-solid fa-trash"></i> Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="section">
+            <div class="section-header">
+                <h2>Internships & Certifications</h2>
+                <button class="btn upload-btn" onclick="openCertModal('add')">
+                    <i class="fa-solid fa-upload"></i> Upload Certificate
+                </button>
+            </div>
+
+            <div class="card-grid" id="certificatesGrid">
+                <div class="card" data-id="101">
+                    <div class="card-img-box">
+                        <img src="https://via.placeholder.com/400x220/1f2937/00fff0?text=Diploma+IT+Certificate" class="card-img" alt="Certificate">
+                    </div>
+                    <div class="card-details">
+                        <h3>Diploma in Information Technology</h3>
+                        <p class="card-org"><i class="fa-solid fa-building"></i> MANUU, Siwan</p>
+                        <p class="card-date"><i class="fa-solid fa-calendar"></i> Completed 2024</p>
+                        <div class="card-actions">
+                            <button class="action-btn edit-btn" onclick="editCertificate(101)"><i class="fa-solid fa-pen"></i> Edit</button>
+                            <button class="action-btn delete-btn" onclick="deleteCertificate(101)"><i class="fa-solid fa-trash"></i> Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visual Resume Section -->
+        <section id="resume" class="section resume-section">
+            <div class="section-header">
+                <h2>My Resume</h2>
+                <label class="btn upload-btn custom-file-upload">
+                    <i class="fa-solid fa-file-arrow-up"></i> Upload / Change Resume
+                    <input type="file" id="resumeFileInput" accept=".pdf,image/*" onchange="handleResumeUpload(event)">
+                </label>
+            </div>
+
+            <div class="resume-container">
+                <div id="noResumeBox" class="no-resume-box">
+                    <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                    <p>No resume uploaded yet. Click on <strong>Upload / Change Resume</strong> above.</p>
+                </div>
+
+                <div id="resumeCard" class="card resume-card" style="display: none;">
+                    <div class="resume-preview-header">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <span id="resumeFileName">PZ_Musharraf_Resume.pdf</span>
+                    </div>
+                    <div class="resume-body">
+                        <p class="status-badge"><i class="fa-solid fa-circle-check"></i> Active Resume</p>
+                        <p>Your uploaded resume card is ready for viewing and downloading.</p>
+                    </div>
+                    <div class="card-actions resume-actions-bar">
+                        <a id="viewResumeBtn" href="#" target="_blank" class="btn primary-btn action-btn">
+                            <i class="fa-solid fa-eye"></i> View
+                        </a>
+                        <a id="downloadResumeBtn" href="#" download class="btn secondary-btn action-btn">
+                            <i class="fa-solid fa-download"></i> Download
+                        </a>
+                        <button class="action-btn delete-btn" onclick="deleteResume()">
+                            <i class="fa-solid fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modals -->
+        <!-- Skill Modal -->
+        <div class="modal-overlay" id="skillModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Add New Skill</h3>
+                    <span class="close-btn" onclick="closeModal('skillModal')">&times;</span>
+                </div>
+                <form id="skillForm" onsubmit="handleSkillSubmit(event)">
+                    <div class="form-group">
+                        <label>Skill Name</label>
+                        <input type="text" id="skillName" placeholder="e.g. Next.js, Docker, Java" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Logo / Icon Class (FontAwesome or Image URL)</label>
+                        <input type="text" id="skillIcon" placeholder="e.g. devicon-nextjs-original or https://example.com/logo.png" required>
+                        <small style="color:var(--text-secondary); font-size:11px;">Supports image URLs or Devicon / FontAwesome CSS classes.</small>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn secondary-btn" onclick="closeModal('skillModal')">Cancel</button>
+                        <button type="submit" class="btn primary-btn">Add Skill</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Project Modal -->
+        <div class="modal-overlay" id="projectModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="projModalTitle">Upload New Project</h3>
+                    <span class="close-btn" onclick="closeModal('projectModal')">&times;</span>
+                </div>
+                <form id="projectForm" onsubmit="handleProjectSubmit(event)">
+                    <input type="hidden" id="projEditId">
+                    <div class="form-group"><label>Project Title</label><input type="text" id="projTitle" required></div>
+                    <div class="form-group"><label>Technologies</label><input type="text" id="projTech" required></div>
+                    <div class="form-group"><label>Description</label><textarea id="projDesc" rows="3" required></textarea></div>
+                    <div class="form-group"><label>Live Demo URL</label><input type="url" id="projDemo"></div>
+                    <div class="form-group"><label>GitHub URL</label><input type="url" id="projGithub"></div>
+                    <div class="form-group">
+                        <label>Project Cover Image</label>
+                        <input type="file" accept="image/*" onchange="previewImage(event, 'projImgPreview', 'projImgPreviewBox')">
+                        <input type="hidden" id="projExistingImg">
+                        <div class="img-preview-box" id="projImgPreviewBox"><img id="projImgPreview" src=""></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn secondary-btn" onclick="closeModal('projectModal')">Cancel</button>
+                        <button type="submit" class="btn primary-btn">Save Project</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Certificate Modal -->
+        <div class="modal-overlay" id="certModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="certModalTitle">Upload New Certificate</h3>
+                    <span class="close-btn" onclick="closeModal('certModal')">&times;</span>
+                </div>
+                <form id="certForm" onsubmit="handleCertSubmit(event)">
+                    <input type="hidden" id="certEditId">
+                    <div class="form-group"><label>Certificate Title</label><input type="text" id="certTitle" required></div>
+                    <div class="form-group"><label>Organization</label><input type="text" id="certOrg" required></div>
+                    <div class="form-group"><label>Issue Date</label><input type="text" id="certDate" required></div>
+                    <div class="form-group">
+                        <label>Certificate Image</label>
+                        <input type="file" accept="image/*" onchange="previewImage(event, 'certImgPreview', 'certImgPreviewBox')">
+                        <input type="hidden" id="certExistingImg">
+                        <div class="img-preview-box" id="certImgPreviewBox"><img id="certImgPreview" src=""></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn secondary-btn" onclick="closeModal('certModal')">Cancel</button>
+                        <button type="submit" class="btn primary-btn">Save Certificate</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Typed.js -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+        // Typing Effect
+        var typed = new Typed('#element', {
+            strings: ['Software Developer', 'MERN Stack Developer', 'Data Analyst', 'UI/UX Designer'],
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 1500,
+            loop: true
+        });
+
+        // Theme Switcher Logic
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+            const themeIcon = document.getElementById('themeIcon');
+            if (document.body.classList.contains('light-theme')) {
+                themeIcon.className = 'fa-solid fa-sun';
+            } else {
+                themeIcon.className = 'fa-solid fa-moon';
+            }
+        }
+
+        let tempImgData = "";
+
+        function openModal(id) { document.getElementById(id).classList.add('active'); }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+
+        function previewImage(event, previewImgId, previewBoxId) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    tempImgData = e.target.result;
+                    document.getElementById(previewImgId).src = tempImgData;
+                    document.getElementById(previewBoxId).style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        /* --- SKILLS LOGIC --- */
+        function openSkillModal() {
+            openModal('skillModal');
+            document.getElementById('skillForm').reset();
+        }
+
+        function handleSkillSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('skillName').value;
+            const iconVal = document.getElementById('skillIcon').value;
+            const newId = Date.now();
+
+            let iconHTML = '';
+            if (iconVal.startsWith('http://') || iconVal.startsWith('https://')) {
+                iconHTML = `<img src="${iconVal}" class="skill-img-logo" alt="${name}">`;
+            } else {
+                iconHTML = `<i class="${iconVal} skill-icon"></i>`;
+            }
+
+            const newHTML = `
+                <div class="skill-card" data-id="${newId}">
+                    ${iconHTML}
+                    <h4>${name}</h4>
+                    <button class="skill-del-btn" onclick="deleteSkill(${newId})"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            `;
+            document.getElementById('skillsGrid').insertAdjacentHTML('beforeend', newHTML);
+            closeModal('skillModal');
+        }
+
+        function deleteSkill(id) {
+            if (confirm("Remove this skill?")) {
+                document.querySelector(`#skillsGrid .skill-card[data-id="${id}"]`).remove();
+            }
+        }
+
+        /* --- PROJECTS LOGIC --- */
+        function openProjectModal(mode) {
+            openModal('projectModal');
+            if (mode === 'add') {
+                document.getElementById('projModalTitle').innerText = "Upload New Project";
+                document.getElementById('projectForm').reset();
+                document.getElementById('projEditId').value = "";
+                document.getElementById('projImgPreviewBox').style.display = "none";
+                tempImgData = "";
+            }
+        }
+
+        function handleProjectSubmit(e) {
+            e.preventDefault();
+            const editId = document.getElementById('projEditId').value;
+            const title = document.getElementById('projTitle').value;
+            const tech = document.getElementById('projTech').value;
+            const desc = document.getElementById('projDesc').value;
+            const demo = document.getElementById('projDemo').value || '#';
+            const github = document.getElementById('projGithub').value || '#';
+            const imgSrc = tempImgData || document.getElementById('projExistingImg').value || 'https://via.placeholder.com/400x220/1f2937/00fff0?text=Project';
+
+            if (editId) {
+                const card = document.querySelector(`#projectsGrid .card[data-id="${editId}"]`);
+                card.querySelector('.card-img').src = imgSrc;
+                card.querySelector('h3').innerText = title;
+                card.querySelector('.card-tech').innerHTML = `<strong>Tech:</strong> ${tech}`;
+                card.querySelector('.card-desc').innerText = desc;
+                card.querySelector('.live-link').href = demo;
+                card.querySelector('.github-link').href = github;
+            } else {
+                const newId = Date.now();
+                const newHTML = `
+                    <div class="card" data-id="${newId}">
+                        <div class="card-img-box"><img src="${imgSrc}" class="card-img" alt="Project"></div>
+                        <div class="card-details">
+                            <h3>${title}</h3>
+                            <p class="card-tech"><strong>Tech:</strong> ${tech}</p>
+                            <p class="card-desc">${desc}</p>
+                            <div class="project-links">
+                                <a href="${demo}" target="_blank" class="link-btn live-link"><i class="fa-solid fa-globe"></i> Live Demo</a>
+                                <a href="${github}" target="_blank" class="link-btn github-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                            </div>
+                            <div class="card-actions">
+                                <button class="action-btn edit-btn" onclick="editProject(${newId})"><i class="fa-solid fa-pen"></i> Edit</button>
+                                <button class="action-btn delete-btn" onclick="deleteProject(${newId})"><i class="fa-solid fa-trash"></i> Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                document.getElementById('projectsGrid').insertAdjacentHTML('beforeend', newHTML);
+            }
+            closeModal('projectModal');
+        }
+
+        function editProject(id) {
+            const card = document.querySelector(`#projectsGrid .card[data-id="${id}"]`);
+            document.getElementById('projModalTitle').innerText = "Update Project";
+            document.getElementById('projEditId').value = id;
+            document.getElementById('projTitle').value = card.querySelector('h3').innerText;
+            document.getElementById('projTech').value = card.querySelector('.card-tech').innerText.replace('Tech:', '').trim();
+            document.getElementById('projDesc').value = card.querySelector('.card-desc').innerText;
+            document.getElementById('projDemo').value = card.querySelector('.live-link').href;
+            document.getElementById('projGithub').value = card.querySelector('.github-link').href;
+            const imgSrc = card.querySelector('.card-img').src;
+            document.getElementById('projExistingImg').value = imgSrc;
+            document.getElementById('projImgPreview').src = imgSrc;
+            document.getElementById('projImgPreviewBox').style.display = "block";
+            tempImgData = "";
+            openModal('projectModal');
+        }
+
+        function deleteProject(id) {
+            if (confirm("Delete this project?")) {
+                document.querySelector(`#projectsGrid .card[data-id="${id}"]`).remove();
+            }
+        }
+
+        /* --- CERTIFICATES LOGIC --- */
+        function openCertModal(mode) {
+            openModal('certModal');
+            if (mode === 'add') {
+                document.getElementById('certModalTitle').innerText = "Upload New Certificate";
+                document.getElementById('certForm').reset();
+                document.getElementById('certEditId').value = "";
+                document.getElementById('certImgPreviewBox').style.display = "none";
+                tempImgData = "";
+            }
+        }
+
+        function handleCertSubmit(e) {
+            e.preventDefault();
+            const editId = document.getElementById('certEditId').value;
+            const title = document.getElementById('certTitle').value;
+            const org = document.getElementById('certOrg').value;
+            const date = document.getElementById('certDate').value;
+            const imgSrc = tempImgData || document.getElementById('certExistingImg').value || 'https://via.placeholder.com/400x220/1f2937/00fff0?text=Certificate';
+
+            if (editId) {
+                const card = document.querySelector(`#certificatesGrid .card[data-id="${editId}"]`);
+                card.querySelector('.card-img').src = imgSrc;
+                card.querySelector('h3').innerText = title;
+                card.querySelector('.card-org').innerHTML = `<i class="fa-solid fa-building"></i> ${org}`;
+                card.querySelector('.card-date').innerHTML = `<i class="fa-solid fa-calendar"></i> ${date}`;
+            } else {
+                const newId = Date.now();
+                const newHTML = `
+                    <div class="card" data-id="${newId}">
+                        <div class="card-img-box"><img src="${imgSrc}" class="card-img" alt="Certificate"></div>
+                        <div class="card-details">
+                            <h3>${title}</h3>
+                            <p class="card-org"><i class="fa-solid fa-building"></i> ${org}</p>
+                            <p class="card-date"><i class="fa-solid fa-calendar"></i> ${date}</p>
+                            <div class="card-actions">
+                                <button class="action-btn edit-btn" onclick="editCertificate(${newId})"><i class="fa-solid fa-pen"></i> Edit</button>
+                                <button class="action-btn delete-btn" onclick="deleteCertificate(${newId})"><i class="fa-solid fa-trash"></i> Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                document.getElementById('certificatesGrid').insertAdjacentHTML('beforeend', newHTML);
+            }
+            closeModal('certModal');
+        }
+
+        function editCertificate(id) {
+            const card = document.querySelector(`#certificatesGrid .card[data-id="${id}"]`);
+            document.getElementById('certModalTitle').innerText = "Update Certificate";
+            document.getElementById('certEditId').value = id;
+            document.getElementById('certTitle').value = card.querySelector('h3').innerText;
+            document.getElementById('certOrg').value = card.querySelector('.card-org').innerText.trim();
+            document.getElementById('certDate').value = card.querySelector('.card-date').innerText.trim();
+            const imgSrc = card.querySelector('.card-img').src;
+            document.getElementById('certExistingImg').value = imgSrc;
+            document.getElementById('certImgPreview').src = imgSrc;
+            document.getElementById('certImgPreviewBox').style.display = "block";
+            tempImgData = "";
+            openModal('certModal');
+        }
+
+        function deleteCertificate(id) {
+            if (confirm("Delete this certificate?")) {
+                document.querySelector(`#certificatesGrid .card[data-id="${id}"]`).remove();
+            }
+        }
+
+        /* --- VISUAL RESUME LOGIC --- */
+        function handleResumeUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const fileURL = URL.createObjectURL(file);
+                document.getElementById('noResumeBox').style.display = 'none';
+                document.getElementById('resumeCard').style.display = 'block';
+
+                document.getElementById('resumeFileName').innerText = file.name;
+                document.getElementById('viewResumeBtn').href = fileURL;
+                
+                const downloadBtn = document.getElementById('downloadResumeBtn');
+                downloadBtn.href = fileURL;
+                downloadBtn.setAttribute('download', file.name);
+            }
+        }
+
+        function deleteResume() {
+            if (confirm("Remove the uploaded resume?")) {
+                document.getElementById('resumeFileInput').value = "";
+                document.getElementById('resumeCard').style.display = 'none';
+                document.getElementById('noResumeBox').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>
